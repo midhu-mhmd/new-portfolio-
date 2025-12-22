@@ -3,7 +3,13 @@ import { Inter} from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
 import { Bebas_Neue } from "next/font/google";
+import { Oswald } from 'next/font/google';
 
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['500', '700'], // We load the weights needed for the design
+  variable: '--font-oswald', // Optional: if you want to use it in tailwind config later
+});
 
 const bebas = Bebas_Neue({
   subsets: ["latin"],

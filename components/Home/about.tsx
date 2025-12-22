@@ -13,14 +13,13 @@ export default function About() {
     const ctx = gsap.context(() => {
       gsap.from(".about-animate", {
         opacity: 0,
-        y: 100,
-        skewY: 3,
-        duration: 1.5,
+        y: 80,
+        duration: 1.4,
         ease: "power4.out",
-        stagger: 0.15,
+        stagger: 0.12,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%",
+          start: "top 75%",
         },
       });
     }, sectionRef);
@@ -32,54 +31,65 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="min-h-screen bg-[#0E0F0F] text-white flex flex-col items-center justify-center px-6"
+      className="relative py-40 px-6 text-white"
     >
-      {/* Title */}
-      <h2 className="about-animate text-xs tracking-[0.35em] text-white/40 mb-24">
-        ( ABOUT ME )
-      </h2>
+      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+        
+        {/* Section label */}
+        <h2 className="about-animate text-xs tracking-[0.35em] text-white/40 mb-24">
+          ( ABOUT )
+        </h2>
 
-      {/* Main Heading */}
-      <h1 className="about-animate text-3xl md:text-5xl text-center font-light mb-16 max-w-4xl leading-tight">
-        A PASSIONATE MERN STACK DEVELOPER  
-        CRAFTING MODERN, SCALABLE  
-        WEB EXPERIENCES.
-      </h1>
+        {/* Hero text */}
+        <h1 className="about-animate text-3xl md:text-5xl font-light max-w-4xl leading-tight mb-16">
+          A MERN STACK DEVELOPER<br />
+          BUILDING SCALABLE, MODERN<br />
+          DIGITAL EXPERIENCES.
+        </h1>
 
-      {/* Intro Text (instead of image) */}
-      <p className="about-animate text-sm md:text-base text-center text-white/60 max-w-2xl mb-28 leading-relaxed">
-        I build full-stack applications using MongoDB, Express,
-        React and Node.js — focusing on performance, clean
-        architecture and immersive user experience.
-      </p>
+        {/* Intro paragraph */}
+        <p className="about-animate text-sm md:text-base text-white/60 max-w-2xl mb-32 leading-relaxed">
+          I design and develop full-stack web applications using
+          MongoDB, Express, React and Node.js — focused on
+          performance, architecture and immersive interaction.
+        </p>
 
-      {/* Bottom Grid */}
-      <div className="grid md:grid-cols-3 gap-16 max-w-6xl text-xs text-white/60 leading-relaxed">
-        <div className="about-animate">
-          <p className="mb-4 tracking-widest text-white/40">+ MY IDENTITY</p>
-          <p>
-            A MERN STACK DEVELOPER BASED IN INDIA,
-            SPECIALIZING IN FULL-STACK WEB APPLICATIONS,
-            CLEAN UI AND ROBUST BACKEND SYSTEMS.
-          </p>
-        </div>
+        {/* Info Grid */}
+        <div className="grid md:grid-cols-3 gap-16 text-left max-w-6xl text-xs text-white/60">
+          
+          <div className="about-animate">
+            <p className="mb-4 tracking-widest text-white/40">
+              + IDENTITY
+            </p>
+            <p>
+              MERN STACK DEVELOPER BASED IN INDIA,
+              PASSIONATE ABOUT BUILDING RELIABLE
+              BACKEND SYSTEMS AND CLEAN USER INTERFACES.
+            </p>
+          </div>
 
-        <div className="about-animate">
-          <p className="mb-4 tracking-widest text-white/40">+ MY GROWTH</p>
-          <p>
-            STARTED WITH CURIOSITY FOR HOW WEBSITES WORK.
-            EVOLVED INTO BUILDING APIs, DATABASES AND
-            SCALABLE FRONTENDS WITH REAL-WORLD PROJECTS.
-          </p>
-        </div>
+          <div className="about-animate">
+            <p className="mb-4 tracking-widest text-white/40">
+              + GROWTH
+            </p>
+            <p>
+              STARTED FROM SIMPLE WEB PAGES,
+              PROGRESSED INTO DATABASES, APIs,
+              AUTHENTICATION AND SCALABLE APPLICATIONS.
+            </p>
+          </div>
 
-        <div className="about-animate">
-          <p className="mb-4 tracking-widest text-white/40">+ MY HOBBIES</p>
-          <p>
-            EXPLORING 3D WEBSITES, ANIMATIONS,
-            LEARNING NEW TECH, UI DESIGN,
-            AND BUILDING FUTURISTIC DIGITAL EXPERIENCES.
-          </p>
+          <div className="about-animate">
+            <p className="mb-4 tracking-widest text-white/40">
+              + INTERESTS
+            </p>
+            <p>
+              EXPLORING 3D WEBSITES, ANIMATIONS,
+              PERFORMANCE OPTIMIZATION,
+              AND FUTURE-DRIVEN WEB EXPERIENCES.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>

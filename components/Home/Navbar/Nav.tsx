@@ -20,7 +20,7 @@ const Nav = () => {
           href="/"
           className={`${bebas.className} text-white text-lg tracking-tight uppercase leading-none inline-block relative`}
         >
-          midhu_mhmd_
+          midhu_mhmd
         </Link>
 
         {/* Menu */}
