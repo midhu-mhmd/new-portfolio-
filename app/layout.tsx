@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} antialiased bg-linear-to-b from-[#376d4a] to-[#1f563a]
+        className={`${font.className} antialiased ${bebas.variable} ${oswald.variable}
 `}
       >
         <ResponsiveNav />
