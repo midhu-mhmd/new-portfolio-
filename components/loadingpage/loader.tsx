@@ -65,7 +65,7 @@ export default function Loading() {
         {/* Main Text */}
         <div ref={textRef} className="overflow-hidden">
           <div className="text-[#111111] text-[10px] tracking-[0.6em] uppercase font-bold mb-4">
-            Midhu_Mhmd <span className="text-[#B8B8D1]">/</span> Architecture
+            Midhu_Mhmd <span className="text-[#B8B8D1]"></span>
           </div>
         </div>
 

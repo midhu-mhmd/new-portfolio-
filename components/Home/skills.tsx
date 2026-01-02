@@ -1,180 +1,123 @@
 "use client";
 
-import { useEffect, useRef, useMemo, useState, Suspense } from "react";
-import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Text, useCursor, Float } from "@react-three/drei";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const skills = [
-  "JavaScript", "TypeScript", "React", "Next.js",
-  "Node.js", "Express", "MongoDB", "GSAP",
-  "Three.js", "Tailwind", "HTML5",
-  "CSS3", "Git", "REST APIs", "Figma"
+const expertise = [
+  { id: "01", area: "Frontend", tools: "React / Next.js / Three.js / GSAP", desc: "Crafting immersive, high-performance user interfaces." },
+  { id: "02", area: "Backend", tools: "Node.js / Express / PostgreSQL / Prisma", desc: "Building scalable and secure server-side architectures." },
+  { id: "03", area: "Infrastructure", tools: "AWS / Docker / Kubernetes / CI-CD", desc: "Deploying robust ecosystems with 99.9% uptime." },
+  { id: "04", area: "Creative", tools: "Figma / Spline / Blender / UI-UX", desc: "Designing digital products with an editorial soul." },
 ];
 
-/* WORD COMPONENT */
-function Word({ text, position }: { text: string; position: THREE.Vector3 }) {
-  const ref = useRef<THREE.Group>(null);
-  const [hovered, setHovered] = useState(false);
-
-  useCursor(hovered);
-
-  useFrame(({ camera }) => {
-    if (!ref.current) return;
-    ref.current.lookAt(camera.position);
-  });
-
-  return (
-    <group
-      ref={ref}
-      position={position}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
-      scale={hovered ? 1.2 : 1}
-    >
-      <Text
-        fontSize={0.4}
-        color={hovered ? "#111111" : "#B8B8D1"}
-        anchorX="center"
-        anchorY="middle"
-      >
-        {text}
-      </Text>
-    </group>
-  );
-}
-
-/* CLOUD */
-function Cloud() {
-  const group = useRef<THREE.Group>(null);
-
-  const words = useMemo(() => {
-    const arr: { text: string; pos: THREE.Vector3 }[] = [];
-    const phi = Math.PI * (3 - Math.sqrt(5));
-    const radius = 4.5;
-
-    for (let i = 0; i < skills.length; i++) {
-      const y = 1 - (i / (skills.length - 1)) * 2;
-      const r = Math.sqrt(1 - y * y);
-      const theta = phi * i;
-
-      arr.push({
-        text: skills[i],
-        pos: new THREE.Vector3(
-          Math.cos(theta) * r * radius,
-          y * radius,
-          Math.sin(theta) * r * radius
-        ),
-      });
-    }
-    return arr;
-  }, []);
-
-  useFrame((state) => {
-    if (!group.current) return;
-    group.current.rotation.y += 0.002;
-    group.current.rotation.x =
-      Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
-  });
-
-  return (
-    <group ref={group}>
-      {/* Wireframe Core */}
-      <mesh>
-        <sphereGeometry args={[4.2, 32, 32]} />
-        <meshBasicMaterial
-          color="#B8B8D1"
-          wireframe
-          transparent
-          opacity={0.1}
-        />
-      </mesh>
-
-      {words.map((w, i) => (
-        <Word key={i} text={w.text} position={w.pos} />
-      ))}
-    </group>
-  );
-}
-
-/* MAIN SECTION */
-export default function Skills() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+export default function IndustrialSkills() {
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(titleRef.current, {
-        y: 100,
-        opacity: 0,
-        filter: "blur(15px)",
-        duration: 1.5,
-        ease: "expo.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
-        },
+      // Create a vertical "scrub" animation for the text blocks
+      const items = gsap.utils.toArray(".skill-item");
+      
+      items.forEach((item: any) => {
+        gsap.fromTo(item, 
+          { opacity: 0.2, scale: 0.95, filter: "blur(4px)" },
+          {
+            opacity: 1,
+            scale: 1,
+            filter: "blur(0px)",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 70%",
+              end: "top 30%",
+              scrub: true,
+            }
+          }
+        );
       });
-    }, sectionRef);
+
+      // Background "Floating" Text
+      gsap.to(".bg-text-float", {
+        xPercent: -20,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          scrub: 1,
+        }
+      });
+    }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-   <section
-  ref={sectionRef}
-  id="skills"
-  className="relative py-20 md:py-32 bg-[#E2E2E2] overflow-hidden"
->
-  {/* Background Text */}
-  <div className="absolute inset-0 flex items-center justify-center text-[25vw] font-black text-[#B8B8D1] opacity-10 pointer-events-none select-none z-0">
-    SKILLS
-  </div>
-
-  {/* CANVAS CONTAINER 
-    h-[400px] for mobile 
-    md:h-[600px] for desktop 
-  */}
-  <div className="relative w-full h-[400px] md:h-[600px] z-10">
-    <Canvas 
-      camera={{ position: [0, 0, 12], fov: 35 }} 
-      dpr={[1, 2]}
-      // This ensures the canvas takes up 100% of the parent div
-      style={{ width: '100%', height: '100%' }} 
+    <section 
+      ref={containerRef} 
+      id="skills"
+      className="relative min-h-screen bg-[#111111] text-[#E2E2E2] py-40 px-6 md:px-20 overflow-hidden"
     >
-      <ambientLight intensity={1} />
+      {/* Background Kinetic Layer */}
+      <div className="bg-text-float absolute top-20 left-0 whitespace-nowrap text-[25vw] font-black text-white/[0.02] leading-none select-none pointer-events-none">
+        ENGINEERING SYSTEM ENGINEERING SYSTEM
+      </div>
 
-      <Suspense fallback={null}>
-        <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-          <Cloud />
-        </Float>
-      </Suspense>
-    </Canvas>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-32 border-b border-white/10 pb-12">
+          <div className="overflow-hidden">
+            <h2 className="text-[10px] uppercase tracking-[0.8em] text-[#B8B8D1] mb-6 font-bold block">
+              Capabilities // 2026
+            </h2>
+            <h3 className="text-6xl md:text-8xl font-[var(--font-bebas)] leading-[0.85] uppercase tracking-tighter">
+              The Technical <br /> <span className="text-white/40">Manifesto</span>
+            </h3>
+          </div>
+          <div className="mt-8 md:mt-0 max-w-xs">
+             <p className="text-[10px] leading-relaxed uppercase tracking-widest text-white/40">
+               Focusing on the intersection of raw performance and visual storytelling. Built with the MERN stack and cinematic motion.
+             </p>
+          </div>
+        </div>
 
-    {/* Overlay Text */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-      <p className="text-[10px] tracking-[0.6em] text-[#111111]/40 mb-4 uppercase font-bold">
-        Technical Stack
-      </p>
+        {/* The Industrial List */}
+        <div className="flex flex-col space-y-20 md:space-y-40">
+          {expertise.map((item) => (
+            <div key={item.id} className="skill-item flex flex-col md:flex-row gap-10 md:gap-20 items-start md:items-end group">
+              <span className="text-5xl md:text-8xl font-serif italic text-[#B8B8D1]/20 group-hover:text-[#B8B8D1] transition-colors duration-700">
+                {item.id}
+              </span>
+              
+              <div className="flex-1 border-l border-white/10 pl-10 md:pl-20 py-2">
+                <h4 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter mb-6">
+                  {item.area}
+                </h4>
+                <p className="text-lg md:text-xl text-white/60 font-light max-w-2xl mb-8 leading-snug">
+                  {item.desc}
+                </p>
+                <div className="flex flex-wrap gap-x-8 gap-y-2 text-[10px] font-mono uppercase tracking-[0.4em] text-[#B8B8D1]">
+                  {item.tools.split(" / ").map(tool => (
+                    <span key={tool} className="hover:text-white transition-colors cursor-crosshair">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-      <h2
-        ref={titleRef}
-        className="text-5xl md:text-8xl lg:text-9xl font-light text-[#111111] text-center tracking-tighter leading-[0.8] uppercase"
-      >
-        Digital <br />
-        <span className="italic font-serif lowercase text-[#B8B8D1]">
-          arsenal
-        </span>
-      </h2>
+              {/* Decorative Visual Element */}
+              <div className="hidden md:flex flex-col gap-1 items-end opacity-20 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="w-20 h-px bg-white" />
+                <div className="w-12 h-px bg-white" />
+                <div className="w-16 h-px bg-white" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <div className="mt-8 md:mt-12 w-px h-16 md:h-24 bg-gradient-to-b from-[#B8B8D1] to-transparent" />
-    </div>
-  </div>
-</section>
+      {/* Decorative Grid Lines */}
+      <div className="absolute inset-0 pointer-events-none opacity-5">
+        <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      </div>
+    </section>
   );
 }
-
