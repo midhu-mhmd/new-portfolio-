@@ -23,8 +23,33 @@ const font = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Midhu's Portfolio",
-  description: "MERN Stack Developer & Designer",
+  title: {
+    template: "%s | Midhu — Full Stack Developer",
+    default: "Midhu | MERN Stack Developer",
+  },
+
+  description: "A passionate MERN Stack Developer crafting high-performance web applications. Specializing in scalable backend logic, interactive React interfaces, and modern web experiences.",
+
+  keywords: [
+    "MERN Stack Developer",
+    "Full Stack Web Developer",
+    "React.js Developer",
+    "Node.js Backend",
+    "Next.js Portfolio",
+    "Web Application Development",
+    "Creative Coder",
+    "JavaScript Enthusiast"
+  ],
+
+
+  openGraph: {
+    title: "Midhu | MERN Stack Developer",
+    description: "Building the next generation of web apps with Node, React, and Mongo.",
+    url: "https://your-domain.com",
+    siteName: "Midhu Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="selection:bg-[#111111] selection:text-white">
+    <html lang="en" className="selection:bg-[#111111] overflow-hidden selection:text-white">
       <body
         className={`
           ${font.className} 
