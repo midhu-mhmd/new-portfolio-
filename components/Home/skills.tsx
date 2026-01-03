@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const expertise = [
   { id: "01", area: "Frontend", tools: "React / Next.js / Three.js / GSAP", desc: "Crafting immersive, high-performance user interfaces." },
-  { id: "02", area: "Backend", tools: "Node.js / Express / PostgreSQL / Prisma", desc: "Building scalable and secure server-side architectures." },
-  { id: "03", area: "Infrastructure", tools: "AWS / Docker / Kubernetes / CI-CD", desc: "Deploying robust ecosystems with 99.9% uptime." },
-  { id: "04", area: "Creative", tools: "Figma / Spline / Blender / UI-UX", desc: "Designing digital products with an editorial soul." },
+  { id: "02", area: "Backend", tools: "Node.js / Express / Mongo ", desc: "Building scalable and secure server-side architectures." },
+  { id: "03", area: "Infrastructure", tools: "Docker ", desc: "Deploying robust ecosystems with 99.9% uptime." },
+  { id: "04", area: "Creative", tools: "Figma ", desc: "Designing digital products with an editorial soul." },
 ];
 
 export default function IndustrialSkills() {

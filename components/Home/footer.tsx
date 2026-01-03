@@ -82,7 +82,7 @@ export default function Footer() {
 
       {/* 2. LARGE BRANDING OVERLAY (Awwwards Signature) */}
       <div className="mt-40 overflow-hidden pointer-events-none select-none">
-        <h2 className="text-[14.5vw] font-bold uppercase leading-[0.7] tracking-tighter text-white/2">
+        <h2 className="text-[14.5vw] font-bold uppercase leading-[0.7] tracking-tighter text-white/4">
            Muhammed
         </h2>
       </div>
@@ -92,7 +92,7 @@ export default function Footer() {
         
         <div className="flex flex-col gap-2">
           <p className="text-[9px] uppercase tracking-[0.4em] text-white/20">
-            © {currentYear} Midhu Muhammad — Personal Portfolio
+            © {currentYear} Midhu Muhammed — Personal Portfolio
           </p>
           <div className="flex gap-4 opacity-20 hover:opacity-100 transition-opacity">
              <span className="text-[8px] font-mono tracking-tighter font-bold uppercase">Lat: 9.9312° N</span>

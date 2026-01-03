@@ -114,9 +114,9 @@ const Nav = () => {
                 <div className="space-y-2">
                   <span className="text-[10px] uppercase tracking-widest opacity-40">Socials</span>
                   <div className="flex flex-col gap-1 text-sm font-bold uppercase tracking-widest">
-                    <a href="#" className="hover:text-[#B8B8D1]">LinkedIn</a>
-                    <a href="#" className="hover:text-[#B8B8D1]">GitHub</a>
-                    <a href="#" className="hover:text-[#B8B8D1]">Read.cv</a>
+                    <a href="https://www.linkedin.com/in/midhu-mhmd/" className="hover:text-[#B8B8D1]">LinkedIn</a>
+                    <a href="https://github.com/midhu-mhmd" className="hover:text-[#B8B8D1]">GitHub</a>
+                    <a href="/cv.png" className="hover:text-[#B8B8D1]">Read.cv</a>
                   </div>
                 </div>
                 <div className="space-y-2">

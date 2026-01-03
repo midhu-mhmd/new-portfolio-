@@ -43,21 +43,13 @@ export default function VoidHero() {
       </div>
 
       {/* 2. Top Header (The Brand) */}
-      <div className="relative z-10 flex justify-between items-start meta-fade">
+      <div className="relative z-10 flex justify-between  items-start meta-fade">
         <div className="flex flex-col gap-1">
           <span className="text-[10px] font-bold uppercase tracking-[0.5em]">
-            Midhu Muhammad
+            Midhu Muhammed
           </span>
           <span className="text-[9px] opacity-40 uppercase tracking-[0.3em]">
             Fullstack Developer
-          </span>
-        </div>
-        <div className="flex gap-12">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] cursor-pointer hover:opacity-50 transition-opacity">
-            Work
-          </span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] cursor-pointer hover:opacity-50 transition-opacity">
-            Info
           </span>
         </div>
       </div>
