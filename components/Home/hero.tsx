@@ -81,9 +81,6 @@ export default function VoidHero() {
             <p className="text-[10px] uppercase tracking-[0.5em] font-bold text-[#111111]/60">
               MERN Stack Architect
             </p>
-            <span className="text-[8px] font-mono opacity-30 uppercase tracking-widest mt-1">
-              Node // React // TypeScript // JWT // Redis
-            </span>
           </div>
         </div>
       </div>
