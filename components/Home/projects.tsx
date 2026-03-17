@@ -9,21 +9,30 @@ gsap.registerPlugin(ScrollTrigger);
 const projectList = [
   {
     id: "01",
+    title: "SOVEREIGN",
+    subtitle: "Healthcare SaaS Platform",
+    tags: ["MERN", "Redis", "Socket.io", "Three.js"],
+    description: "A multi-tenant ecosystem featuring AI-driven symptom checking, automated ticketing, and real-time medical consultation modules with secure payment processing.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
+    accent: "#D1B8B8"
+  },
+  {
+    id: "02",
     title: "DRIPNEST",
-    subtitle: "Apparel Engineering",
-    tags: ["MERN", "JWT", "Tailwind"],
-    description: "A high-performance custom apparel engine focusing on real-time visualization and secure e-commerce workflows. Built from scratch to handle complex personalization logic.",
+    subtitle: "E-Commerce Architecture",
+    tags: ["MERN", "MUI", "AG Grid", "Razorpay"],
+    description: "A comprehensive e-commerce platform featuring an interactive admin dashboard, complex data tables, and seamless payment integration for professional retail workflows.",
     image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2000&auto=format&fit=crop",
     accent: "#B8B8D1"
   },
   {
-    id: "02",
-    title: "sovereign",
-    subtitle: "Healthcare SaaS",
-    tags: ["LLM", "Node.js", "Redis"],
-    description: "A next-generation multi-clinic ecosystem featuring AI-driven symptom checking, automated ticketing, and multi-tenant isolation for hospital networks.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
-    accent: "#D1B8B8"
+    id: "03",
+    title: "SIMAK FRESH",
+    subtitle: "Freelance E-commerce Frontend",
+    tags: ["React", "TypeScript", "Redux", "Tailwind"],
+    description: "Developed a modern and responsive e-commerce frontend for SIMAK FRESH as a freelance project. Built using React and TypeScript, the application features scalable state management with Redux and a clean UI powered by Tailwind CSS. Implemented product browsing, cart functionality, and optimized user experience for smooth performance across devices.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
+    accent: "#B8D1B8"
   }
 ];
 

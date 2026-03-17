@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function SpatialAbout() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
-  const originalText = "I solve technical problems with cinematic solutions. My MERN stack architecture focuses on structural integrity and invisible code quality.";
+  const originalText = "I architect scalable MERN stack ecosystems with a focus on multi-tenant SaaS integrity, secure REST APIs, and immersive, high-performance user interfaces.";
 
   useEffect(() => {
     // 1. Safety check: Only split if it hasn't been split yet
@@ -94,7 +94,7 @@ export default function SpatialAbout() {
             </div>
 
             <div className="group relative w-full sm:w-64 h-80 bg-[#111111] p-8 flex flex-col justify-between overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-               <span className="text-[10px] text-[#B8B8D1] uppercase tracking-[0.4em]">Node // Mongo</span>
+               <span className="text-[10px] text-[#B8B8D1] uppercase tracking-[0.4em]">MERN // SaaS // AWS</span>
                <div className="space-y-4">
                   <div className="w-8 h-px bg-white/20" />
                   <p className="text-[#E2E2E2] text-xl font-serif italic lowercase leading-tight">

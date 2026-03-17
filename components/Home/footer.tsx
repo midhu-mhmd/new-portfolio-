@@ -16,12 +16,12 @@ export default function Footer() {
         <div className="md:col-span-5 space-y-6">
           <h4 className="text-[10px] uppercase tracking-[0.4em] text-[#B8B8D1] font-bold">Connect // Direct</h4>
           <a 
-            href="mailto:mhmdmidhu@gmail.com" 
+            href="mailto:midhumidlaj776@gmail.com" 
             className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter hover:italic transition-all duration-500 inline-block group"
           >
             Say Hello 
             <span className="block text-sm mt-4 font-mono opacity-40 group-hover:opacity-100 group-hover:translate-x-4 transition-all duration-500">
-               → mhmdmidhu@gmail.com
+               → midhumidlaj776@gmail.com
             </span>
           </a>
         </div>
@@ -92,7 +92,7 @@ export default function Footer() {
         
         <div className="flex flex-col gap-2">
           <p className="text-[9px] uppercase tracking-[0.4em] text-white/20">
-            © {currentYear} Midhu Muhammed — Personal Portfolio
+            © {currentYear} Muhammed Midlaj — Personal Portfolio
           </p>
           <div className="flex gap-4 opacity-20 hover:opacity-100 transition-opacity">
              <span className="text-[8px] font-mono tracking-tighter font-bold uppercase">Lat: 9.9312° N</span>

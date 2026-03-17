@@ -7,10 +7,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const expertise = [
-  { id: "01", area: "Frontend", tools: "React / Next.js / Three.js / GSAP", desc: "Crafting immersive, high-performance user interfaces." },
-  { id: "02", area: "Backend", tools: "Node.js / Express / Mongo ", desc: "Building scalable and secure server-side architectures." },
-  { id: "03", area: "Infrastructure", tools: "Docker ", desc: "Deploying robust ecosystems with 99.9% uptime." },
-  { id: "04", area: "Creative", tools: "Figma ", desc: "Designing digital products with an editorial soul." },
+  { id: "01", area: "Frontend", tools: "React.js / Next.js / TypeScript / GSAP / Framer Motion", desc: "Building immersive user interfaces with Redux Toolkit, React Query, and Material UI." },
+  { id: "02", area: "Backend", tools: "Node.js / Express.js / REST APIs / JWT / RBAC", desc: "Architecting secure server-side systems with MVC logic and middleware-based authorization." },
+  { id: "03", area: "Database", tools: "MongoDB / Mongoose / Redis / Aggregation", desc: "Designing complex schemas and high-performance aggregation pipelines for scalable data." },
+  { id: "04", area: "DevOps & Tools", tools: "AWS / Vercel / Git / Docker / Vite", desc: "Managing cloud deployment pipelines and full-stack development ecosystems." },
 ];
 
 export default function IndustrialSkills() {

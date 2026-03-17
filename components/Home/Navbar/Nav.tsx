@@ -27,14 +27,14 @@ const Nav = () => {
     <nav className="fixed top-0 w-full z-100 transition-all duration-500">
       {/* 1. Main Navigation Bar */}
       <div className={`
-        flex items-center justify-between mx-auto px-8 md:px-12 transition-all duration-500
-        ${scrolled ? "h-[8vh] bg-[#E8E8E3]/80 backdrop-blur-xl border-b border-[#111111]/5" : "h-[12vh] bg-transparent"}
+        flex items-center justify-between mx-auto px-6 md:px-12 transition-all duration-500
+        ${scrolled ? "h-16 md:h-20 bg-[#E8E8E3]/80 backdrop-blur-xl border-b border-[#111111]/5" : "h-20 md:h-24 bg-transparent"}
       `}>
         
         {/* Brand - Letter Spacing is key for 2026 minimal look */}
         <Link
           href="/"
-          className={`${bebas.className} text-[#111111] text-2xl uppercase tracking-[0.2em] hover:opacity-50 transition-opacity`}
+          className={`${bebas.className} text-[#111111] text-xl md:text-2xl uppercase tracking-[0.2em] hover:opacity-50 transition-opacity`}
         >
           M.MHMD
         </Link>
@@ -64,13 +64,13 @@ const Nav = () => {
           className="group relative w-8 h-8 flex flex-col justify-center gap-1.5 z-110"
           onClick={() => setOpen(!open)}
         >
-          <motion.div 
+          <motion.div
             animate={open ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-            className="w-full h-[1.5px] bg-[#111111] origin-center transition-all" 
+            className="w-full h-[1.5px] bg-[#111111] origin-center transition-all"
           />
-          <motion.div 
+          <motion.div
             animate={open ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-            className="w-full h-[1.5px] bg-[#111111] origin-center transition-all" 
+            className="w-full h-[1.5px] bg-[#111111] origin-center transition-all"
           />
         </button>
       </div>

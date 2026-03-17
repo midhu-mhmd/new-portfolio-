@@ -102,7 +102,7 @@ export default function AetherContact() {
           <div className="flex items-center justify-center md:pt-10 w-full md:w-auto">
             <div ref={magneticButton} className="relative group">
               <a 
-                href="mailto:mhmdmidhu@gmail.com" 
+                href="mailto:midhumidlaj776@gmail.com" 
                 className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full border border-white/10 flex items-center justify-center text-center p-6 md:p-8 transition-colors hover:border-white/40"
               >
                 {/* Background reveal circle */}

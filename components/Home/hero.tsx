@@ -33,7 +33,7 @@ export default function VoidHero() {
   return (
     <main
       ref={container}
-      className="relative h-screen w-full bg-[#E8E8E3] text-[#111111] flex flex-col justify-between p-8 md:p-20 overflow-hidden"
+      className="relative h-screen w-full bg-[#E8E8E3] text-[#111111] flex flex-col justify-between pt-32 pb-12 px-6 md:p-20 overflow-hidden"
     >
       {/* 1. Subtle Background Mark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -45,8 +45,8 @@ export default function VoidHero() {
       {/* 2. Top Header (The Brand) */}
       <div className="relative z-10 flex justify-between  items-start meta-fade">
         <div className="flex flex-col gap-1">
-          <span className="text-[10px] font-bold uppercase tracking-[0.5em]">
-            Midhu Muhammed
+          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.5em]">
+            Muhammed Midlaj
           </span>
           <span className="text-[9px] opacity-40 uppercase tracking-[0.3em]">
             Fullstack Developer
@@ -79,10 +79,10 @@ export default function VoidHero() {
           {/* Technical Meta Tag */}
           <div className="flex flex-col md:items-start">
             <p className="text-[10px] uppercase tracking-[0.5em] font-bold text-[#111111]/60">
-              MERN Stack Specialist
+              MERN Stack Architect
             </p>
             <span className="text-[8px] font-mono opacity-30 uppercase tracking-widest mt-1">
-              Node // Express // React // Mongo
+              Node // React // TypeScript // JWT // Redis
             </span>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function VoidHero() {
             Current Project
           </span>
           <span className="text-[10px] font-bold uppercase tracking-widest border-b border-[#111111]/20 pb-1">
-           Ai Healthcare SaaS
+            SIMAK FRESH
           </span>
         </div>
 

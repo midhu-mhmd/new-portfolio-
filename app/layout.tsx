@@ -24,8 +24,8 @@ const font = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Midhu — Full Stack Developer",
-    default: "Midhu | MERN Stack Developer",
+    template: "%s | Muhammed Midlaj — Full Stack Developer",
+    default: "Muhammed Midlaj | MERN Stack Developer",
   },
 
   description: "A passionate MERN Stack Developer crafting high-performance web applications. Specializing in scalable backend logic, interactive React interfaces, and modern web experiences.",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 
   openGraph: {
-    title: "Midhu | MERN Stack Developer",
+    title: "Muhammed Midlaj | MERN Stack Developer",
     description: "Building the next generation of web apps with Node, React, and Mongo.",
     url: "https://your-domain.com",
     siteName: "Midhu Portfolio",
