@@ -73,27 +73,27 @@ export default function SpatialAbout() {
     >
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       
-      <div className="parallax-fast absolute top-[20%] right-[10%] opacity-10 select-none hidden lg:block">
-        <h4 className="text-[12vw] font-bold font-[var(--font-bebas)] leading-none tracking-tighter uppercase">
+      <div className="parallax-fast absolute top-[20%] right-[10%] opacity-10 select-none hidden md:block">
+        <h4 className="text-[15vw] lg:text-[12vw] font-bold font-[var(--font-bebas)] leading-none tracking-tighter uppercase">
           Logic
         </h4>
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 lg:gap-24">
           
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-20">
-            <div className="parallax-slow">
+          <div className="md:col-span-12 lg:col-span-5 flex flex-col md:flex-row lg:flex-col justify-between items-start md:items-center lg:items-start gap-12 md:gap-20 lg:space-y-20">
+            <div className="parallax-slow max-w-sm">
               <span className="text-[10px] font-bold tracking-[0.6em] uppercase text-[#B8B8D1] block mb-6">
                 // System Philosophy
               </span>
               <div className="h-px w-20 bg-[#111111] mb-8" />
-              <p className="text-xs font-medium uppercase tracking-widest text-[#111111]/60 leading-relaxed max-w-sm">
+              <p className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-[#111111]/60 leading-relaxed">
                 I do not just build websites. I architect digital environments where performance and aesthetic are inseparable. 
               </p>
             </div>
 
-            <div className="group relative w-64 h-80 bg-[#111111] p-8 flex flex-col justify-between overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+            <div className="group relative w-full sm:w-64 h-80 bg-[#111111] p-8 flex flex-col justify-between overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
                <span className="text-[10px] text-[#B8B8D1] uppercase tracking-[0.4em]">Node // Mongo</span>
                <div className="space-y-4">
                   <div className="w-8 h-px bg-white/20" />
@@ -107,17 +107,17 @@ export default function SpatialAbout() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="md:col-span-12 lg:col-span-7 flex flex-col justify-center">
             {/* Added aria-label for SEO/Accessibility */}
             <h2 
               ref={textRef}
               aria-label={originalText}
-              className="text-[10vw] md:text-[5.5vw] font-bold leading-[0.9] tracking-tighter text-[#111111] uppercase whitespace-normal"
+              className="text-[10vw] sm:text-[8vw] lg:text-[5.5vw] font-bold leading-[0.9] tracking-tighter text-[#111111] uppercase whitespace-normal"
             >
               {originalText}
             </h2>
 
-            <div className="grid grid-cols-2 gap-8 mt-24 border-t border-[#111111]/10 pt-12">
+            <div className="grid grid-cols-2 gap-8 mt-16 md:mt-24 border-t border-[#111111]/10 pt-12">
               <div>
                 <span className="text-[9px] font-bold uppercase tracking-[0.3em] opacity-40">Core Focus</span>
                 <p className="text-[10px] font-bold uppercase mt-2">Scalable Ecosystems</p>

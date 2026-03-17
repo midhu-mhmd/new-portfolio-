@@ -14,7 +14,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect for background blur
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
@@ -24,7 +24,7 @@ const Nav = () => {
   const menuItems = ["About", "Skills", "Projects", "Contact"];
 
   return (
-    <nav className="fixed top-0 w-full z-[100] transition-all duration-500">
+    <nav className="fixed top-0 w-full z-100 transition-all duration-500">
       {/* 1. Main Navigation Bar */}
       <div className={`
         flex items-center justify-between mx-auto px-8 md:px-12 transition-all duration-500
@@ -40,7 +40,7 @@ const Nav = () => {
         </Link>
 
         {/* Desktop Menu - "The Technical List" */}
-        <div className="hidden md:flex items-center gap-12">
+        <div className="hidden lg:flex items-center gap-8 xl:gap-12">
           {menuItems.map((item, i) => (
             <Link
               key={item}
@@ -56,12 +56,12 @@ const Nav = () => {
               </span>
             </Link>
           ))}
-          <div className="w-10 h-[1px] bg-[#111111]/20 ml-4" />
+          <div className="w-10 h-px bg-[#111111]/20 ml-4" />
         </div>
 
         {/* Hamburger - Brutalist Style */}
         <button
-          className="group relative w-8 h-8 flex flex-col justify-center gap-1.5 z-[110]"
+          className="group relative w-8 h-8 flex flex-col justify-center gap-1.5 z-110"
           onClick={() => setOpen(!open)}
         >
           <motion.div 
@@ -83,11 +83,11 @@ const Nav = () => {
             animate={{ clipPath: "circle(150% at 95% 5%)" }}
             exit={{ clipPath: "circle(0% at 95% 5%)" }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 bg-[#111111] text-[#E8E8E3] z-[105] flex flex-col justify-center p-8 md:p-20"
+            className="fixed inset-0 bg-[#111111] text-[#E8E8E3] z-105 flex flex-col justify-center p-6 sm:p-12 md:p-20"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12 md:gap-20">
               <div className="flex flex-col gap-4">
-                <span className="text-[10px] uppercase tracking-[0.5em] opacity-40 font-bold mb-10 text-[#B8B8D1]">Navigation // Index</span>
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.5em] opacity-40 font-bold mb-6 sm:mb-10 text-[#B8B8D1]">Navigation // Index</span>
                 {menuItems.map((item, i) => (
                   <motion.div
                     key={item}
@@ -98,10 +98,10 @@ const Nav = () => {
                     <Link
                       href={`#${item.toLowerCase()}`}
                       onClick={() => setOpen(false)}
-                      className="group flex items-baseline gap-6"
+                      className="group flex items-baseline gap-4 sm:gap-6"
                     >
-                      <span className="text-[12px] font-mono opacity-30">0{i + 1}</span>
-                      <h2 className={`${bebas.className} text-[15vw] md:text-[8vw] uppercase leading-none tracking-tighter group-hover:italic group-hover:text-[#B8B8D1] transition-all`}>
+                      <span className="text-[10px] sm:text-[12px] font-mono opacity-30">0{i + 1}</span>
+                      <h2 className={`${bebas.className} text-[18vw] sm:text-[12vw] md:text-[8vw] uppercase leading-none tracking-tighter group-hover:italic group-hover:text-[#B8B8D1] transition-all`}>
                         {item}
                       </h2>
                     </Link>

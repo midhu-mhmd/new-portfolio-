@@ -78,12 +78,12 @@ export default function EditorialProjects() {
         <div className="w-full h-px bg-white/10" />
       </div>
 
-      <div className="space-y-60">
+      <div className="space-y-40 md:space-y-60">
         {projectList.map((proj, idx) => (
           <div key={idx} className="project-item relative flex flex-col items-center">
             
             {/* The Cinematic Frame */}
-            <div className="relative w-full max-w-6xl aspect-[16/9] md:aspect-[21/9] overflow-hidden group cursor-pointer">
+            <div className="relative w-full max-w-6xl aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] overflow-hidden group cursor-pointer">
               <img 
                 src={proj.image} 
                 className="project-img w-full h-[140%] object-cover grayscale hover:grayscale-0 transition-[filter] duration-1000" 
@@ -97,26 +97,27 @@ export default function EditorialProjects() {
             </div>
 
             {/* Content Overlay/Underlay */}
-            <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-12 mt-12 px-6">
-              <div className="md:col-span-1 text-5xl font-serif italic text-white/10">{proj.id}</div>
+            <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-12 mt-8 md:mt-12 px-6">
+              <div className="hidden md:block md:col-span-1 text-5xl font-serif italic text-white/10">{proj.id}</div>
               
               <div className="md:col-span-6 overflow-hidden">
-                <h3 className="project-title text-6xl md:text-8xl font-(--font-bebas) leading-none uppercase tracking-tighter">
+                <span className="md:hidden text-2xl font-serif italic text-white/10 mb-2 block">{proj.id}</span>
+                <h3 className="project-title text-5xl sm:text-6xl md:text-8xl font-[var(--font-bebas)] leading-none uppercase tracking-tighter">
                   {proj.title}
                 </h3>
-                <p className="text-xl md:text-2xl font-serif italic text-[#B8B8D1] mt-4 opacity-80">
+                <p className="text-lg md:text-2xl font-serif italic text-[#B8B8D1] mt-4 opacity-80">
                   {proj.subtitle}
                 </p>
               </div>
 
               <div className="md:col-span-5 flex flex-col justify-end mt-8 md:mt-0 md:pl-20">
-                <p className="text-sm leading-relaxed text-white/50 mb-8 uppercase tracking-tight">
+                <p className="text-xs sm:text-sm leading-relaxed text-white/50 mb-8 uppercase tracking-tight">
                   {proj.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mb-10">
                   {proj.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-mono border border-white/20 px-3 py-1 rounded-full text-white/40">
+                    <span key={tag} className="text-[9px] sm:text-[10px] font-mono border border-white/20 px-3 py-1 rounded-full text-white/40">
                       {tag}
                     </span>
                   ))}

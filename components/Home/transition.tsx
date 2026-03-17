@@ -12,16 +12,18 @@ export default function SpatialSwingWrapper({ children }: { children: React.Reac
   const innerRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Apply the Side-Pivot "Spatial Swing" logic here
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      // Desktop & Tablet
       gsap.fromTo(
         innerRef.current,
         { 
-          rotationY: -35,      // The "Door" angle
-          x: "20%",            // Inward slide
-          z: -600,             // Start in the distance
+          rotationY: -35,
+          x: "20%",
+          z: -600,
           opacity: 0,
-          transformOrigin: "left center", // The hinge point
+          transformOrigin: "left center",
         },
         {
           rotationY: 0,
@@ -31,15 +33,42 @@ export default function SpatialSwingWrapper({ children }: { children: React.Reac
           ease: "power2.out",
           scrollTrigger: {
             trigger: outerRef.current,
-            start: "top bottom", 
-            end: "center center", 
-            scrub: 1.5,        // High inertia for cinematic feel
+            start: "top bottom",
+            end: "center center",
+            scrub: 1.5,
           },
         }
       );
-    }, outerRef);
+    });
 
-    return () => ctx.revert();
+    mm.add("(max-width: 767px)", () => {
+      // Mobile - Reduced intensity
+      gsap.fromTo(
+        innerRef.current,
+        { 
+          rotationY: -10,
+          x: "5%",
+          z: -200,
+          opacity: 0,
+          transformOrigin: "left center",
+        },
+        {
+          rotationY: 0,
+          x: "0%",
+          z: 0,
+          opacity: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: outerRef.current,
+            start: "top 95%",
+            end: "center 70%",
+            scrub: 1,
+          },
+        }
+      );
+    });
+
+    return () => mm.revert();
   }, []);
 
   return (

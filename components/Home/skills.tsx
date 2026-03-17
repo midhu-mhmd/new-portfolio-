@@ -79,22 +79,21 @@ export default function IndustrialSkills() {
           </div>
         </div>
 
-        {/* The Industrial List */}
-        <div className="flex flex-col space-y-20 md:space-y-40">
+        <div className="flex flex-col space-y-24 md:space-y-40">
           {expertise.map((item) => (
-            <div key={item.id} className="skill-item flex flex-col md:flex-row gap-10 md:gap-20 items-start md:items-end group">
-              <span className="text-5xl md:text-8xl font-serif italic text-[#B8B8D1]/20 group-hover:text-[#B8B8D1] transition-colors duration-700">
+            <div key={item.id} className="skill-item flex flex-col md:flex-row gap-10 lg:gap-20 items-start md:items-end group">
+              <span className="text-6xl md:text-8xl lg:text-[10rem] font-serif italic text-[#B8B8D1]/20 group-hover:text-[#B8B8D1] transition-colors duration-700">
                 {item.id}
               </span>
               
               <div className="flex-1 border-l border-white/10 pl-10 md:pl-20 py-2">
-                <h4 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter mb-6">
+                <h4 className="text-4xl md:text-6xl lg:text-8xl font-bold uppercase tracking-tighter mb-6">
                   {item.area}
                 </h4>
-                <p className="text-lg md:text-xl text-white/60 font-light max-w-2xl mb-8 leading-snug">
+                <p className="text-base sm:text-lg md:text-xl text-white/60 font-light max-w-2xl mb-8 leading-snug">
                   {item.desc}
                 </p>
-                <div className="flex flex-wrap gap-x-8 gap-y-2 text-[10px] font-mono uppercase tracking-[0.4em] text-[#B8B8D1]">
+                <div className="flex flex-wrap gap-x-6 sm:gap-x-8 gap-y-2 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.4em] text-[#B8B8D1]">
                   {item.tools.split(" / ").map(tool => (
                     <span key={tool} className="hover:text-white transition-colors cursor-crosshair">
                       {tool}
@@ -104,7 +103,7 @@ export default function IndustrialSkills() {
               </div>
 
               {/* Decorative Visual Element */}
-              <div className="hidden md:flex flex-col gap-1 items-end opacity-20 group-hover:opacity-100 transition-opacity duration-700">
+              <div className="hidden lg:flex flex-col gap-1 items-end opacity-20 group-hover:opacity-100 transition-opacity duration-700">
                 <div className="w-20 h-px bg-white" />
                 <div className="w-12 h-px bg-white" />
                 <div className="w-16 h-px bg-white" />

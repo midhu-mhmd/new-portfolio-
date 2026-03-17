@@ -76,7 +76,7 @@ export default function AetherContact() {
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-20">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-16 md:gap-20">
           
           {/* Main Title Area */}
           <div className="flex-1">
@@ -86,12 +86,12 @@ export default function AetherContact() {
               </span>
             </div>
             
-            <h2 className="text-[12vw] md:text-[10vw] font-bold leading-[0.8] uppercase tracking-tighter">
+            <h2 className="text-[clamp(48px,12vw,120px)] md:text-[8vw] lg:text-[10vw] font-bold leading-[0.8] uppercase tracking-tighter">
               <div className="overflow-hidden h-fit">
                 <span className="reveal-text block">Elevate Your</span>
               </div>
               <div className="overflow-hidden h-fit">
-                <span className="reveal-text block italic font-serif text-[9vw] text-[#B8B8D1] normal-case tracking-normal">
+                <span className="reveal-text block italic font-serif text-[clamp(40px,9vw,100px)] md:text-[7vw] lg:text-[9vw] text-[#B8B8D1] normal-case tracking-normal">
                   Digital Presence
                 </span>
               </div>
@@ -99,16 +99,16 @@ export default function AetherContact() {
           </div>
 
           {/* Magnetic CTA */}
-          <div className="flex items-center justify-center pt-10">
+          <div className="flex items-center justify-center md:pt-10 w-full md:w-auto">
             <div ref={magneticButton} className="relative group">
               <a 
                 href="mailto:mhmdmidhu@gmail.com" 
-                className="w-48 h-48 md:w-64 md:h-64 rounded-full border border-white/10 flex items-center justify-center text-center p-8 transition-colors hover:border-white/40"
+                className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full border border-white/10 flex items-center justify-center text-center p-6 md:p-8 transition-colors hover:border-white/40"
               >
                 {/* Background reveal circle */}
                 <div className="absolute inset-0 bg-[#E2E2E2] rounded-full scale-0 group-hover:scale-100 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]" />
                 
-                <p className="relative z-10 text-[10px] md:text-xs font-bold uppercase tracking-widest leading-relaxed group-hover:text-black transition-colors duration-500">
+                <p className="relative z-10 text-[9px] md:text-xs font-bold uppercase tracking-widest leading-relaxed group-hover:text-black transition-colors duration-500">
                   Start a <br /> Project
                 </p>
               </a>
