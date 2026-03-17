@@ -24,7 +24,7 @@ const Nav = () => {
   const menuItems = ["About", "Skills", "Projects", "Contact"];
 
   return (
-    <nav className="fixed top-0 w-full z-100 transition-all duration-500">
+    <nav className="fixed top-0 w-full z-[1000] transition-all duration-500">
       {/* 1. Main Navigation Bar */}
       <div className={`
         flex items-center justify-between mx-auto px-6 md:px-12 transition-all duration-500
@@ -59,18 +59,17 @@ const Nav = () => {
           <div className="w-10 h-px bg-[#111111]/20 ml-4" />
         </div>
 
-        {/* Hamburger - Brutalist Style */}
         <button
-          className="group relative w-8 h-8 flex flex-col justify-center gap-1.5 z-110"
+          className="group relative w-10 h-10 flex flex-col justify-center items-center gap-1.5 z-[2000]"
           onClick={() => setOpen(!open)}
         >
           <motion.div
-            animate={open ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-            className="w-full h-[1.5px] bg-[#111111] origin-center transition-all"
+            animate={open ? { rotate: 45, y: 4.5 } : { rotate: 0, y: 0 }}
+            className={`w-8 h-[2px] origin-center transition-all ${open ? "bg-white" : "bg-[#111111]"}`}
           />
           <motion.div
-            animate={open ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-            className="w-full h-[1.5px] bg-[#111111] origin-center transition-all"
+            animate={open ? { rotate: -45, y: -4.5 } : { rotate: 0, y: 0 }}
+            className={`w-8 h-[2px] origin-center transition-all ${open ? "bg-white" : "bg-[#111111]"}`}
           />
         </button>
       </div>
@@ -83,7 +82,7 @@ const Nav = () => {
             animate={{ clipPath: "circle(150% at 95% 5%)" }}
             exit={{ clipPath: "circle(0% at 95% 5%)" }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 bg-[#111111] text-[#E8E8E3] z-105 flex flex-col justify-center p-6 sm:p-12 md:p-20"
+            className="fixed inset-0 bg-[#111111] text-[#E8E8E3] z-[1500] flex flex-col justify-center p-6 sm:p-12 md:p-20"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12 md:gap-20">
               <div className="flex flex-col gap-4">

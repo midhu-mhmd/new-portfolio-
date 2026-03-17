@@ -59,7 +59,7 @@ export default function IndustrialSkills() {
     >
       {/* Background Kinetic Layer */}
       <div className="bg-text-float absolute top-20 left-0 whitespace-nowrap text-[25vw] font-black text-white/[0.02] leading-none select-none pointer-events-none">
-        ENGINEERING SYSTEM ENGINEERING SYSTEM
+        DEVELOPER SYSTEM DEVELOPER SYSTEM
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
