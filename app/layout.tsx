@@ -58,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="selection:bg-[#111111] overflow-hidden selection:text-white">
+    <html lang="en" className="selection:bg-[#111111] selection:text-white">
       <body
         className={`
           ${font.className} 
